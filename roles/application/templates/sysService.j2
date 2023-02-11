@@ -1,0 +1,13 @@
+[Unit]
+Description=A Spring Boot application
+After=syslog.target
+
+[Service]
+User=spring
+Group=spring
+
+ExecStart=/usr/bin/java -jar {{ package_file_remote_location }}/{{package_file_name}}
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

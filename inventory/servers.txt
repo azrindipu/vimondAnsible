@@ -1,0 +1,1 @@
+vimondServer ansible_host=localhost ansible_ssh_pass=az101036 ansible_user=new_user

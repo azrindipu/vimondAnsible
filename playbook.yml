@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  roles:
+    - {
+        role: roles/application,
+        when: deploy_application == 'true' or deploy_application == true,
+      }
+
+  vars:
+    deploy_application: "{{ deploy_application }}"
+    package_file_location: "{{ package_file_location }}"
+    package_file_name: vimond.jar
+    package_file_remote_location: /usr/local/application
+    service_name: vimond
+
